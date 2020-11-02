@@ -10,9 +10,8 @@ jobs:
     - name: Vale
       uses: ./ # Uses an action in the root directory
       with:
-        styles: |
-          https://github.com/errata-ai/write-good/releases/latest/download/write-good.zip
         config:
           .vale.ini
+        onlyAnnotateModifiedLines: true
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
