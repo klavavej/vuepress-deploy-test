@@ -1,17 +1,29 @@
-name: vale-linting
-on: push
+
+
+
+name: Linting
+on: [push]
 
 jobs:
-  lint:
+  prose:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@master
+
     - name: Vale
       uses: errata-ai/vale-action@v1.3.0
       with:
-        config:
-          .vale.ini
+        # Optional
+        styles: |
+          https://github.com/errata-ai/Microsoft/releases/latest/download/Microsoft.zip
+          https://github.com/errata-ai/write-good/releases/latest/download/write-good.zip
+
+        # Optional
+        config: https://raw.githubusercontent.com/klavavej/vuepress-deploy-test/master/.vale.ini
+
+        # Optional
         onlyAnnotateModifiedLines: true
       env:
+        # Required
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
