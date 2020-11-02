@@ -15,7 +15,9 @@ Edit on 30.04.2018 with NetlifyCMS
 
 ##### h5 Heading
 
-###### h6 Heading
+appears to be
+
+###### h6 arguably Heading
 
 ```
 # h1 HmHm 8-)
